@@ -14,39 +14,40 @@
 <body>
   <div class="container page">
     <div class="border">
-    <div class="row">
-      <div class="col-1">
-        <img src="images/partly_cloudy.png" alt="Partle clouded" class="icon" />
-      </div>
-      <div class="col">
-        <span class="actualWeather" id="temperature-element">10</span><span class="element"><strong class="celciusElement" href="#">°C</strong> | <a class="FarenheitElement" href="#">°F</a></span>
-      </div>
-      <div class="col details">
-        <ul class="">
-          <li class="capitalize details-element">Rainfall</li>
-          <li>Humidity: <span id="humidity-element">63%</span></li>
-          <li>Wind: <span id="wind-element">3 km/h</span></li>
-        </ul>
-      </div>
+      <div class="row">
+        <div class="col-1">
+          <img src="images/partly_cloudy.png" alt="Partle clouded" class="icon" />
+        </div>
+        <div class="col">
+          <span class="actualWeather" id="temperature-element"></span><span class="element"><strong class="celciusElement" href="#">°C</strong> | <a class="FarenheitElement" href="#">°F</a></span>
+        </div>
+        <div class="col details">
+          <ul class="">
+            <li class="capitalize details-element"></li>
+            <li>Humidity: <span id="humidity-element"> %</span></li>
+            <li>Wind: <span id="wind-element"> km/h</span></li>
+          </ul>
+        </div>
       <div class="col">
         <ul class="details info">
-          <li class="city-element" id="city">Sherbrooke</li>
+          <li class="city-element" id="city">Type a city</li>
             <div class="details-info2">
-              <li><span id="week-day">Monday</span> <span id="current-time"><span id="hour-element"></span>h<span id="minute-element"></span></span></li>
-              <li class="capitalize description-element">Partly clouded</li>
+              <li>Last updated on:<br />
+                <span id="week-day" class="DayElement"></span> <span id="current-time"><span id="hour-element"></span><span id="minute-element"></span></span></li>
+              <li class="capitalize description-element"></li>
             </div>
         </ul>
       </div>
   </div>
   <div class="row characteristic">
     <div class="col-4 temperature">
-      <a href=".html">Temperature</a>
+      <a href="#">Temperature</a>
     </div>
     <div class="col-4">
-      <a href=".html">Rainfall</a>
+      <a href="#">Rainfall</a>
     </div>
     <div class="col-2 wind">
-      <a href=".html">Wind</a>
+      <a href="#">Wind</a>
     </div>
   </div>
 
@@ -54,7 +55,7 @@
     <form action="script.js" id="search-form">
     <div class="row">
       <div class="col-8">
-        <input type="text" name="city" id="search-city-input" placeholder=" type something..." class="form-control cityInput" autofocus="on" autocomplete="off" />
+        <input type="text" name="city" id="search-city-input" placeholder=" type something..." class="form-control cityInput" autofocus="on" autocomplete="on" />
       </div>
       <div class="col">
         <button type="submit" class="button">Change city</button> 

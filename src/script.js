@@ -1,4 +1,4 @@
-  let positionButton = document.querySelector("#position-button");
+let positionButton = document.querySelector("#position-button");
   positionButton.addEventListener("click", getCurrentPosition)
 
   function displayPositionInfos(position)
@@ -14,13 +14,12 @@
           windElement.innerHTML = `${Math.round(position.data.wind.speed)} km/h`;
           let descriptionElement = document.querySelector(".description-element");
           descriptionElement.innerHTML = position.data.weather[0].description;
-          let currentTime = document.querySelector("#current-time");
           let weekDay = document.querySelector("#week-day");
           weekDay.innerHTML = `${day}`;
           let minuteElement = document.querySelector("#minute-element");
           minuteElement.innerHTML = minute;
           let hourElement = document.querySelector("#hour-element");
-          hourElement.innerHTML = hour;
+          hourElement.innerHTML = hour + "h";
           let temperatureElement = document.querySelector("#temperature-element");
           temperatureElement.innerHTML = Math.round(position.data.main.temp);
   }
@@ -63,13 +62,12 @@
           windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
           let descriptionElement = document.querySelector(".description-element");
           descriptionElement.innerHTML = response.data.weather[0].description;
-          let currentTime = document.querySelector("#current-time");
           let weekDay = document.querySelector("#week-day");
           weekDay.innerHTML = `${day}`;
           let minuteElement = document.querySelector("#minute-element");
           minuteElement.innerHTML = minute;
           let hourElement = document.querySelector("#hour-element");
-          hourElement.innerHTML = hour;
+          hourElement.innerHTML = hour + "h";
           let temperatureElement = document.querySelector("#temperature-element");
           temperatureElement.innerHTML = Math.round(response.data.main.temp);
         }
@@ -117,23 +115,3 @@
     }
     let sentence =`${day} ${month} ${now.getDate()}, ${hour}h${minute}, ${now.getFullYear()}`;
     currentDate.innerHTML = sentence;
-
-
-    function displayInfos(response)
-  {
-      console.log(response);
-      let temperatureElement = document.querySelector("#temperature-element");
-      temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  }
-
-  let apiKey = "a4fb4ddbf2b13a9459eb4e9f970296ce";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lisbon&units=metric&appid=${apiKey}`;
-
-  axios.get(apiUrl).then(displayInfos);
-
-    let weekDay = document.querySelector("#week-day");
-    weekDay.innerHTML = `${day}`;
-    let minuteElement = document.querySelector("#minute-element");
-    minuteElement.innerHTML = minute;
-    let hourElement = document.querySelector("#hour-element");
-    hourElement.innerHTML = hour;
