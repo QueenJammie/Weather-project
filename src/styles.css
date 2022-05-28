@@ -28,7 +28,12 @@ li {
 .details
 {
   position: relative;
-  right: 100px;
+  top: 17px;
+}
+.details-info2
+{
+  position: relative;
+  bottom: 10px;
 }
 .degreesElement {
   position: relative;
@@ -38,6 +43,11 @@ li {
 input.cityInput {
   width: 95%;
   border: 1px solid;
+}
+li.city-element
+{
+  font-size: 28px;
+  font-weight: bold;
 }
 .icon {
   position: relative;
@@ -101,12 +111,13 @@ button.button:hover {
 .border
 {
   background-color: rgba(255, 255, 255, 0.864);
-  box-shadow: 4px 3px 2px 1px rgba(0, 0, 255, .2);
+  box-shadow: 3px 2px 0px 0px rgba(0, 0, 255, .2);
   padding-left: 8em;
   padding-top: 3em;
   padding-right: 0;
   padding-bottom: 2em;
   border: 2px solid black;
+  border-radius: 10px;
 }
 .signature
 {
