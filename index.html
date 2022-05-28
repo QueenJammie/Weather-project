@@ -8,7 +8,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link href="src/styles.css" rel="stylesheet" type="text/css" />
-  <title>Weather app</title>
+  <title>Vanilla Weather app</title>
 </head>
 
 <body>
@@ -19,7 +19,8 @@
           <img class="icon" id="icon" />
         </div>
         <div class="col">
-          <span class="actualWeather" id="temperature-element"></span><span class="element"><strong class="celciusElement" href="#">°C</strong> | <a class="FarenheitElement" href="#">°F</a></span>
+          <span class="actualWeather" id="temperature-element"></span><span class="element">
+            <strong class="celciusElement" href="#">°C</strong> | <a class="FarenheitElement" id="farenheit-link" href="#">°F</a></span>
         </div>
         <div class="col details">
           <ul class="">
