@@ -48,6 +48,9 @@ li.city-element
 {
   font-size: 28px;
   font-weight: bold;
+  font-style: italic;
+  position: relative;
+  bottom: 7px;
 }
 .icon {
   position: relative;
