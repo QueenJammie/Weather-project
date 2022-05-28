@@ -1,5 +1,7 @@
-let positionButton = document.querySelector("#position-button");
+  let positionButton = document.querySelector("#position-button");
   positionButton.addEventListener("click", getCurrentPosition)
+
+  // When Current location is clicked
 
   function displayPositionInfos(position)
   {
@@ -43,6 +45,8 @@ let positionButton = document.querySelector("#position-button");
   navigator.geolocation.getCurrentPosition(showPosition);
   }
   
+  // When Change city is clicked
+
   function search(event)
   {
       event.preventDefault();
@@ -99,6 +103,8 @@ let positionButton = document.querySelector("#position-button");
 
   let form = document.querySelector("#search-form");
   form.addEventListener("submit", search);
+
+  // Display the current time
 
     let currentDate = document.querySelector("#current-date");
     let now = new Date();
