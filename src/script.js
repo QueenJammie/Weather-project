@@ -54,7 +54,7 @@
           console.log(response);
 
           let city = document.querySelector(".city-element");
-          city.innerHTML = `<span class="capitalize"> ${response.data.name} </span>`;
+          city.innerHTML = `<strong class="capitalize"> ${response.data.name} </strong>`;
           let detailsElement = document.querySelector(".details-element");
           detailsElement.innerHTML = response.data.weather[0].main;
           let humidityElement = document.querySelector("#humidity-element");
