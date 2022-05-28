@@ -20,6 +20,8 @@ let positionButton = document.querySelector("#position-button");
           minuteElement.innerHTML = minute;
           let hourElement = document.querySelector("#hour-element");
           hourElement.innerHTML = hour + "h";
+          let iconElement = document.querySelector("#icon");
+          iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${position.data.weather[0].icon}@2x.png`);
           let temperatureElement = document.querySelector("#temperature-element");
           temperatureElement.innerHTML = Math.round(position.data.main.temp);
   }
@@ -68,6 +70,9 @@ let positionButton = document.querySelector("#position-button");
           minuteElement.innerHTML = minute;
           let hourElement = document.querySelector("#hour-element");
           hourElement.innerHTML = hour + "h";
+          let iconElement = document.querySelector("#icon");
+          iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+          iconElement.setAttribute("alt", `${response.data.weather[0].description}`)
           let temperatureElement = document.querySelector("#temperature-element");
           temperatureElement.innerHTML = Math.round(response.data.main.temp);
         }
