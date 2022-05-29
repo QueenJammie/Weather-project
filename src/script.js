@@ -12,7 +12,6 @@
     forecastDays.forEach(function(forecastDay, index){
       if (index < 6 && index > 0)
       {
-        console.log(forecastDay);
         forecastHTML = forecastHTML + `
         <div class="col-2">
           <ul class="weather-forecast">
@@ -35,10 +34,8 @@
 
   function getForecast(coordinates)
   {
-    console.log(coordinates);
     let apiKey = "a4fb4ddbf2b13a9459eb4e9f970296ce";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-    console.log(apiUrl);
     axios.get(apiUrl).then(displayForecast);
   }
 
