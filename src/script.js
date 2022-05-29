@@ -23,10 +23,12 @@ let positionButton = document.querySelector("#position-button");
           let hourElement = document.querySelector("#hour-element");
           hourElement.innerHTML = hour + "h";
           let iconElement = document.querySelector("#icon");
-          let temperatureElement = document.querySelector("#temperature-element");
           iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${position.data.weather[0].icon}@2x.png`);
-          iconElement.setAttribute("alt", `${response.data.weather[0].description}`)
+          iconElement.setAttribute("alt", `${position.data.weather[0].description}`)
+          let temperatureElement = document.querySelector("#temperature-element");
           temperatureElement.innerHTML = Math.round(position.data.main.temp);
+          
+          displayForecast();
   }
   function showPosition(position)
   {
@@ -37,8 +39,6 @@ let positionButton = document.querySelector("#position-button");
     
 
     axios.get(apiUrl).then(displayPositionInfos);
-    console.log(latitude);
-    console.log(longitude);
   }
 
   function getCurrentPosition(position)
@@ -46,8 +46,9 @@ let positionButton = document.querySelector("#position-button");
   navigator.geolocation.getCurrentPosition(showPosition);
   }
 
-  function displayForecast()
+  function displayForecast(response)
   {
+    console.log(response);
     let forecastElement = document.querySelector("#weather-forecast");
 
     let forecastHTML = `<div class="row">`;
@@ -59,7 +60,7 @@ let positionButton = document.querySelector("#position-button");
               <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="Mainly sunny" class="forecastIcon" />
               <li>${forecastDay}</li>
               <li class="weather-forecast-date">05/24</li>
-              <li class="weather-forecast-description">Mainly sunny</li>
+              <li class="weather-forecast-description">${response.data.daily[1].weather[0].description}</li>
               <li class="weather-forecast-temperatures">
                 <span class="weather-forecast-temperature-max">18°</span> <span class="weather-forecast-temperature-min">4°</span>
               </li>
@@ -71,7 +72,6 @@ let positionButton = document.querySelector("#position-button");
     forecastElement.innerHTML = forecastHTML;
     
   }
-  displayForecast();
   
   // When Change city is clicked
 
@@ -81,6 +81,14 @@ let positionButton = document.querySelector("#position-button");
       let searchCityInput = document.querySelector("#search-city-input")
       let city = document.querySelector("#city");
 
+      function getForecast(coordinates)
+      {
+        console.log(coordinates);
+        let apiKey = "a4fb4ddbf2b13a9459eb4e9f970296ce";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+        console.log(apiUrl);
+        axios.get(apiUrl).then(displayForecast);
+      }
       
         function displayInfos(response)
         {
@@ -108,6 +116,9 @@ let positionButton = document.querySelector("#position-button");
           iconElement.setAttribute("alt", `${response.data.weather[0].description}`)
           let temperatureElement = document.querySelector("#temperature-element");
           temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+          getForecast(response.data.coord);
+          displayForecast();
         }
 
         let apiKey = "a4fb4ddbf2b13a9459eb4e9f970296ce";
