@@ -1,4 +1,4 @@
-  let positionButton = document.querySelector("#position-button");
+let positionButton = document.querySelector("#position-button");
   positionButton.addEventListener("click", getCurrentPosition)
 
   // When Current location is clicked
@@ -23,8 +23,9 @@
           let hourElement = document.querySelector("#hour-element");
           hourElement.innerHTML = hour + "h";
           let iconElement = document.querySelector("#icon");
-          iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${position.data.weather[0].icon}@2x.png`);
           let temperatureElement = document.querySelector("#temperature-element");
+          iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${position.data.weather[0].icon}@2x.png`);
+          iconElement.setAttribute("alt", `${response.data.weather[0].description}`)
           temperatureElement.innerHTML = Math.round(position.data.main.temp);
   }
   function showPosition(position)
@@ -44,6 +45,33 @@
   {
   navigator.geolocation.getCurrentPosition(showPosition);
   }
+
+  function displayForecast()
+  {
+    let forecastElement = document.querySelector("#weather-forecast");
+
+    let forecastHTML = `<div class="row">`;
+    let forecastDays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+    forecastDays.forEach(function(forecastDay) {
+      forecastHTML = forecastHTML + `
+        <div class="col-2">
+          <ul class="weather-forecast">
+              <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="Mainly sunny" class="forecastIcon" />
+              <li>${forecastDay}</li>
+              <li class="weather-forecast-date">05/24</li>
+              <li class="weather-forecast-description">Mainly sunny</li>
+              <li class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max">18°</span> <span class="weather-forecast-temperature-min">4°</span>
+              </li>
+          </ul>
+        </div>`;
+    })
+    
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+    
+  }
+  displayForecast();
   
   // When Change city is clicked
 
@@ -57,6 +85,7 @@
         function displayInfos(response)
         {
           console.log(response);
+
 
           let city = document.querySelector(".city-element");
           city.innerHTML = `<strong class="capitalize"> ${response.data.name} </strong>`;

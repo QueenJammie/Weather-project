@@ -64,19 +64,22 @@
     </div>
     </form>
 
-  <div class="row weather-forecast">
-    <div class="col-2">
-        <ul class="weather-forecast">
-            <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="Mainly sunny" class="forecastIcon" />
-            <li>Tue</li>
-            <li class="weather-forecast-date">05/24</li>
-            <li class="weather-forecast-description">Mainly sunny</li>
-            <li class="weather-forecast-temperatures">
-              <span class="weather-forecast-temperature-max">18°</span> <span class="weather-forecast-temperature-min">4°</span>
-            </li>
-        </ul>
+  <div class="weather-forecast" id="weather-forecast">
+    <div class="row">
+      <div class="col-2">
+          <ul class="weather-forecast">
+              <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="Mainly sunny" class="forecastIcon" />
+              <li>Tue</li>
+              <li class="weather-forecast-date">05/24</li>
+              <li class="weather-forecast-description">Mainly sunny</li>
+              <li class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max">18°</span> <span class="weather-forecast-temperature-min">4°</span>
+              </li>
+          </ul>
+      </div>
     </div>
-    <div class="col-2">
+  </div>
+    <!--<div class="col-2">
       <ul class="weather-forecast">
         <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="Mainly sunny" class="forecastIcon" />
         <li>Tue</li>
@@ -116,13 +119,13 @@
           <span class="weather-forecast-temperature-max">18°</span> <span class="weather-forecast-temperature-min">4°</span>
         </li>
       </ul>
-    </div>
+    </div>-->
   </div>
   
    
     <div class="row">
       <div class="col currentDate">
-        Time now: 📅 <span id="current-date"></span>
+        Date now: 📅 <span id="current-date"></span>
       </div>
     </div>
     </div>
