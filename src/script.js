@@ -12,13 +12,13 @@
     forecastDays.forEach(function(forecastDay, index){
       if (index < 6 && index > 0)
       {
+        console.log(forecastDay);
         forecastHTML = forecastHTML + `
         <div class="col-2">
           <ul class="weather-forecast">
             <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="Mainly sunny" class="forecastIcon" />
             <li>${formatDay(forecastDay.dt)}</li>
-            <li class="weather-forecast-date">05/24</li>
-            <li class="weather-forecast-description">${response.data.daily[1].weather[0].description}</li>
+            <li class="weather-forecast-description">${forecastDay.weather[0].main}</li>
             <li class="weather-forecast-temperatures">
               <span class="weather-forecast-temperature-max">${Math.round(forecastDay.temp.max)}°</span> 
               <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}°</span>
