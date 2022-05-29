@@ -99,14 +99,7 @@
           temperatureElement.innerHTML = null;
           }
       }
-      displayFarenheitTemperature(event)
-    {
-      event.preventDefault();
-      alert("Hey");
-    }
 
-    let farenheitLink = document.querySelector("#farenheit-link");
-    farenheitLink.addEventListener("click", displayFarenheitTemperature);
   }
 
   let form = document.querySelector("#search-form");

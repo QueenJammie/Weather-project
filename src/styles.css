@@ -52,9 +52,20 @@ li.city-element
   position: relative;
   bottom: 7px;
 }
+.weather-forecast li
+{
+  text-align: center;
+  font-size: 13px;
+}
+.weather-forecast-temperature-min
+{
+  opacity: 0.5;
+}
 .icon {
+  width: 135px;
   position: relative;
-  right: 10px;
+  bottom: 13px;
+  right: 35px;
 }
 .city {
   font-size: 18px;
@@ -87,6 +98,7 @@ li.city-element
 }
 button.button {
   padding: 10px;
+  padding-left: 20px;
   color: #6074a7;
   background: #dfebf7;
   border: 2px #6fa1c2;
@@ -100,15 +112,18 @@ button.button:hover {
   border-radius: 30px;
   cursor: pointer;
 }
-.forecast {
+.forecastIcon
+{
   margin-top: 20px;
   text-align: center;
   position: relative;
-  right: 9em;
+  left: 12px;
+  width: 75px;
 }
 .currentDate
 {
   font-style: italic;
+  font-size: 14px;
 }
 .border
 {
