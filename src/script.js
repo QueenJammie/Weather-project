@@ -1,4 +1,4 @@
-  let positionButton = document.querySelector("#position-button");
+let positionButton = document.querySelector("#position-button");
   positionButton.addEventListener("click", getCurrentPosition)
 
   function displayForecast(response)

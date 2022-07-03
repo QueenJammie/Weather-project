@@ -1,0 +1,16 @@
+:root
+{
+    --cssVariable: #fff;
+}
+
+body
+{
+    background-color: var(--cssVariable);
+}
+
+responsiveFirstRow
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
